@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  pageTitle = 'Product List';
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+  pageTitle: string = 'Product List';
+  showImage: boolean = false;
+  listFilter: string = 'cart';
   products: any[] = [
     {
       "productId": 1,
@@ -26,7 +30,7 @@ export class ProductComponent {
       "description": "15 gallon capacity rolling garden cart",
       "price": 32.99,
       "starRating": 4.2,
-      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+      "imageUrl": "assets/images/garden_cart.png"
     },
     {
       "productId": 5,
@@ -36,7 +40,7 @@ export class ProductComponent {
       "description": "Curved claw steel hammer",
       "price": 8.9,
       "starRating": 4.8,
-      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+      "imageUrl": "assets/images/rejon_Hammer.png"
     },
     {
       "productId": 8,
@@ -59,4 +63,7 @@ export class ProductComponent {
       "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ]
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }
